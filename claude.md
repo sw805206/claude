@@ -1,6 +1,6 @@
 # claude.md
 
-claude_2026-06-09-001
+claude_2026-06-10-001
 
 ## Purpose
 
@@ -38,10 +38,20 @@ work. Never guess at a file's contents, a convention, or the user's intent.
 ## Branching and merge
 
 - Code always works on a branch. Never commit directly to `main`.
+- When starting a task, Code suggests the branch name for the user to confirm.
+  Branch names follow the format prefix/topic. Common prefixes: feature/ (new
+  page or capability), fix/ (bug or content correction), chore/ (config,
+  tooling, non-content changes), content/ (copy or asset updates only).
 - Code never merges. Before merging, Code asks the user for review and launches
   the browser preview (the user may also review the pull request on GitHub).
 - The user merges manually. Merge auto-triggers launch; there is no separate
   publish step. The PR preview is the last point of control.
+
+## Visual mock before prompt
+
+For significant UI/UX changes, Chat sends a visual mock after discussion and
+before writing any prompt. For minor changes (e.g. typo corrections), this step
+may be skipped.
 
 ## File and folder discipline
 
